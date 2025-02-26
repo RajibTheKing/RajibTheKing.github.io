@@ -5368,6 +5368,9 @@ a.credit {
   .circular--portrait {
       display: none; /* Hide the stripe on small screens */
   }
+  .circular--portrait--education {
+    display: none;
+  }
 }
 
 .navbar-bg {
