@@ -5284,3 +5284,70 @@ a.credit {
 /* Common Style */
 .section {
   padding-bottom: 0; }
+
+.circular--portrait {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 50%;
+  padding-left: 20px;
+}
+
+.circular--portrait img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 100%;
+  object-fit: cover;  /* Ensures the image fills the circular area without distortion */
+}
+
+.custom-alignment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.job-container {
+  margin: 0 auto;
+  padding: 20px;
+}
+.job-title {
+  font-size: 1.5em; /* Larger, bold title */
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 5px;
+  text-align: left;
+}
+.company-info {
+  font-size: 1em;
+  color: #666;
+  margin: 0 0 10px;
+}
+.details {
+  list-style-type: disc; /* Bullet points like in the image */
+  padding-left: 20px; /* Space for bullets */
+  font-size: 1em;
+  color: #333;
+  margin: 0 0 20px;
+}
+.details li {
+  margin-bottom: 10px;
+}
+.details a {
+  color: #0066cc; /* Blue link color, typical for web links */
+  text-decoration: none;
+}
+.details a:hover {
+  text-decoration: underline;
+}
+
+/* Hide the stripe on small screens (e.g., below 600px) */
+@media screen and (max-width: 800px) {
+  .circular--portrait {
+      display: none; /* Hide the stripe on small screens */
+  }
+}
+
