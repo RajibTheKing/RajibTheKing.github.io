@@ -1,0 +1,88 @@
+/* Main Profile Container */
+.cc-profile-image,
+.cc-profile-image a,
+.profile-image-cycle,
+.profile-image-cycle img {
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.cc-profile-image {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
+}
+
+/* Pulsating Border */
+.cc-profile-image a:before {
+  content: "";
+  border: 15px solid rgba(55, 140, 63, 0.6);
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  left: 0;
+  top: 0; /* Add this line */
+  animation: pulsate 1.6s ease-out infinite;
+  opacity: 0;
+  z-index: 99;
+  box-sizing: border-box;
+}
+
+/* Image Container */
+.profile-image-cycle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* All Images */
+.profile-image-cycle img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 15px solid transparent;
+  opacity: 0;
+  animation: imageFade 15s infinite;
+  z-index: 100;
+  transition: transform 0.3s ease-out;
+}
+
+/* Individual Image Timing */
+.profile-image-cycle img:nth-child(1) { animation-delay: 0s; }
+.profile-image-cycle img:nth-child(2) { animation-delay: 3s; }
+.profile-image-cycle img:nth-child(3) { animation-delay: 6s; }
+.profile-image-cycle img:nth-child(4) { animation-delay: 9s; }
+.profile-image-cycle img:nth-child(5) { animation-delay: 12s; }
+/* Crossfade Animation */
+@keyframes imageFade {
+  0%   { opacity: 0; }
+  3%   { opacity: 1; }
+  31%  { opacity: 1; }
+  36%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Hover Effects - Freezes current state */
+.cc-profile-image:hover .profile-image-cycle img {
+  animation-play-state: paused;
+}
+
+
+.cc-profile-image a:hover:before {
+  animation: none;
+}
+
+/* Pulsate Animation */
+@keyframes pulsate {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { transform: scale(1.1); opacity: 0; }
+}
