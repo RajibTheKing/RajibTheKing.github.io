@@ -5462,9 +5462,7 @@ p {
 
 /* Dark navigation pills */
 .nav-pills .nav-item .nav-link {
-    background-color: #404040 !important;
     color: #e0e0e0 !important;
-    border: 1px solid #555555 !important;
 }
 
 .nav-pills .nav-item .nav-link:hover {
@@ -5473,7 +5471,6 @@ p {
 }
 
 .nav-pills .nav-item .nav-link.active {
-    background-color: #007bff !important;
     color: #ffffff !important;
 }
 
@@ -5749,21 +5746,15 @@ pre {
     background-color: transparent !important;
 }
 
-.tab-brand-container {
-    background-color: #404040 !important;
-    border: 1px solid #555555 !important;
-}
-
 .tab-brand-logo {
     filter: brightness(0.8) contrast(1.2) !important;
 }
 
-.nav-link.active .tab-brand-container {
+.nav-link.active {
     background-color: #007bff !important;
-    border-color: #007bff !important;
 }
 
-.nav-link:hover .tab-brand-container {
+.nav-link:hover {
     background-color: #555555 !important;
 }
 
