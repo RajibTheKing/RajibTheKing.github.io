@@ -88,6 +88,7 @@
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         position: relative;
         overflow: hidden;
+        border-bottom: none !important;
     }
 
     .nav-icon {
@@ -147,21 +148,15 @@
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     }
 
-    /* Underline Animation */
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #fff, transparent);
-        transition: all 0.4s ease;
+    /* Remove all potential underline sources */
+    .navbar-nav {
+        border-bottom: none !important;
     }
-
-    .nav-link:hover::after {
-        width: 100%;
-        left: 0;
+    
+    .nav-link::after,
+    .nav-link::before {
+        display: none !important;
+        content: none !important;
     }
 
     /* Responsive Design */

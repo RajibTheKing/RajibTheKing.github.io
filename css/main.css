@@ -5372,7 +5372,6 @@ body {
 /* Dark navbar */
 .navbar {
     background-color: #2d2d2d !important;
-    border-bottom: 1px solid #404040 !important;
 }
 
 .navbar.bg-white {
