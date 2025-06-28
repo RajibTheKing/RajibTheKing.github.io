@@ -1,18 +1,195 @@
 <header>
     <div class="profile-page sidebar-collapse">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="400">
             <div class="container">
-                <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                    <ul class="navbar-nav navbar-bg">
-                        <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
-                        <li class="nav-item"><a class="nav-link smooth-scroll" href="#education">Education</a></li>
-                        <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
+                <div class="collapse navbar-collapse justify-content-center" id="navigation">
+                    <ul class="navbar-nav floating-nav">
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#about">
+                                <span class="nav-icon">👤</span>
+                                <span class="nav-text">About</span>
+                                <span class="nav-dot"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#experience">
+                                <span class="nav-icon">💼</span>
+                                <span class="nav-text">Experience</span>
+                                <span class="nav-dot"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#education">
+                                <span class="nav-icon">🎓</span>
+                                <span class="nav-text">Education</span>
+                                <span class="nav-dot"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#skill">
+                                <span class="nav-icon">🛠️</span>
+                                <span class="nav-text">Skills</span>
+                                <span class="nav-dot"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#gallery">
+                                <span class="nav-icon">🖼️</span>
+                                <span class="nav-text">Gallery</span>
+                                <span class="nav-dot"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#contact">
+                                <span class="nav-icon">📧</span>
+                                <span class="nav-text">Contact</span>
+                                <span class="nav-dot"></span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
 </header>
+
+<style>
+    /* Floating Navigation Styles */
+    .floating-nav {
+        display: flex;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 50px;
+        padding: 10px 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transform: translateY(-20px);
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(-20px); }
+        50% { transform: translateY(-30px); }
+    }
+
+    .nav-item {
+        position: relative;
+        margin: 0 10px;
+    }
+
+    .nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #fff !important;
+        padding: 10px 15px !important;
+        text-decoration: none !important;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-icon {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-text {
+        font-size: 0.85rem;
+        font-weight: 500;
+        opacity: 0.8;
+        transition: all 0.3s ease;
+    }
+
+    .nav-dot {
+        width: 6px;
+        height: 6px;
+        background: transparent;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 5px;
+        transition: all 0.3s ease;
+    }
+
+    /* Hover Effects */
+    .nav-link:hover {
+        transform: translateY(-5px);
+    }
+
+    .nav-link:hover .nav-icon {
+        transform: scale(1.2);
+    }
+
+    .nav-link:hover .nav-text {
+        opacity: 1;
+        transform: translateY(2px);
+    }
+
+    /* Active State */
+    .nav-link.active {
+        transform: translateY(-8px);
+    }
+
+    .nav-link.active .nav-icon {
+        transform: scale(1.3);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .nav-link.active .nav-text {
+        opacity: 1;
+        font-weight: 600;
+    }
+
+    .nav-link.active .nav-dot {
+        background: #fff;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Underline Animation */
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #fff, transparent);
+        transition: all 0.4s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+        left: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .floating-nav {
+            flex-direction: column;
+            border-radius: 20px;
+            padding: 15px;
+            align-items: flex-start;
+        }
+
+        .nav-item {
+            margin: 5px 0;
+        }
+
+        .nav-link {
+            flex-direction: row;
+            padding: 8px 15px !important;
+        }
+
+        .nav-icon {
+            margin-bottom: 0;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .nav-text {
+            font-size: 0.9rem;
+        }
+    }
+</style>
