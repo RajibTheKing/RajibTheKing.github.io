@@ -86,3 +86,60 @@
   50% { opacity: 0.3; }
   100% { transform: scale(1.1); opacity: 0; }
 }
+
+.circular--portrait {
+  position: absolute;
+  width: 235px;
+  height: 235px;
+  overflow: hidden;
+  border-radius: 50%;
+  padding-left: 20px;
+}
+
+.circular--portrait img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 100%;
+  object-fit: cover;  /* Ensures the image fills the circular area without distortion */
+}
+
+.circular--portrait--education{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  padding-left: 20px;
+}
+
+.circular--portrait--education img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 100%;
+  object-fit: cover;  /* Ensures the image fills the circular area without distortion */
+}
+
+/* Dark circular portraits */
+.circular--portrait {
+    background-color: #2d2d2d !important;
+}
+
+.circular--portrait--education {
+    background-color: #2d2d2d !important;
+}
+
+/* Hide the stripe on small screens (e.g., below 600px) */
+@media screen and (max-width: 800px) {
+  .circular--portrait {
+      display: none; /* Hide the stripe on small screens */
+  }
+  .circular--portrait--education {
+    display: none;
+  }
+}
